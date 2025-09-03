@@ -1,0 +1,138 @@
+/* styles.css — NovaLabs demo */
+:root {
+  --bg: #0b0f14;
+  --panel: #121823;
+  --panel-2: #16202e;
+  --text: #e6edf3;
+  --muted: #b8c1cc;
+  --accent: #79c0ff;
+  --brand: #7ee787;
+  --border: #263141;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 30% -10%, #12223b 0%, transparent 60%) no-repeat, var(--bg);
+  line-height: 1.6;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11,15,20,.7); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; color: var(--text); }
+.brand .logo { font-size: 1.25rem; }
+.brand.small .logo { font-size: 1rem; }
+.menu a { color: var(--text); text-decoration: none; margin-left: 18px; opacity: .9; }
+.menu a.active { color: var(--brand); }
+.menu .btn { margin-left: 12px; }
+
+/* Hero */
+.hero { display: grid; gap: 32px; grid-template-columns: 1.1fr 1fr; align-items: center; padding: 64px 0; }
+.hero h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin: 0 0 10px; }
+.hero .accent { color: var(--brand); }
+.hero p { color: var(--muted); max-width: 56ch; }
+.hero-cta { margin: 16px 0 10px; display: flex; gap: 12px; }
+.hero-art img { width: 100%; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,.4)); }
+
+.trust-badges { display: flex; gap: 16px; padding: 0; list-style: none; margin: 18px 0 0; color: var(--muted); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 16px; border-radius: 999px;
+  background: linear-gradient(180deg, #2a3344 0%, #1a2230 100%);
+  color: var(--text); text-decoration: none; border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.btn:hover { transform: translateY(-1px); transition: transform .15s; }
+.btn-ghost { background: transparent; border: 1px solid var(--border); }
+
+/* Cards & Features */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px 0 60px; }
+.card {
+  background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 20px;
+  box-shadow: var(--shadow);
+}
+.card img { width: 64px; height: 64px; }
+.card.center { text-align: center; }
+.w-80 { width: 80%; margin: 0 auto; display: block; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; padding-bottom: 80px; }
+.contact-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.map-embed img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--border); background: rgba(11,15,20,.6); }
+.footer-grid { display: grid; grid-template-columns: 1fr auto; padding: 24px 0; align-items: center; }
+.footer-links a { color: var(--muted); text-decoration: none; margin-left: 16px; }
+.muted { color: var(--muted); }
+
+/* Page header / about */
+.page-header { padding: 40px 0 10px; }
+.grid-2 { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; padding-bottom: 60px; }
+.prose ul { margin-top: 0; }
+.note { background: #0f1622; border: 1px dashed var(--border); padding: 12px; border-radius: 12px; color: var(--muted); }
+
+/* Chatbot */
+.chat-fab {
+  position: fixed; right: 22px; bottom: 22px; z-index: 60;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; cursor: pointer;
+  background: linear-gradient(180deg, #2f8df7 0%, #1f6cd6 100%);
+  color: white; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.2);
+}
+
+.chat-panel {
+  position: fixed; right: 22px; bottom: 90px; z-index: 60;
+  width: min(380px, calc(100vw - 40px)); height: 520px;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 20px; box-shadow: var(--shadow); display: none; overflow: hidden;
+}
+.chat-panel.open { display: grid; grid-template-rows: auto 1fr auto; }
+
+.chat-header { padding: 14px 16px; background: var(--panel-2); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.chat-title { display: flex; align-items: center; gap: 10px; }
+.chat-title .dot { width: 10px; height: 10px; border-radius: 50%; background: #2f8df7; box-shadow: 0 0 10px #2f8df7; }
+
+.chat-body { padding: 14px; overflow-y: auto; }
+.msg { display: grid; gap: 6px; margin-bottom: 10px; }
+.msg .bubble {
+  max-width: 85%; padding: 10px 12px; border-radius: 14px; border: 1px solid var(--border);
+  background: #0f1622;
+}
+.msg.user .bubble { margin-left: auto; background: #0f2232; }
+.msg.bot .bubble { background: #0f1622; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 6px 0 0; }
+.chip { font-size: .85rem; padding: 6px 10px; border-radius: 999px; background: #0e1826; border: 1px solid var(--border); color: var(--muted); cursor: pointer; }
+
+.chat-input { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 12px; border-top: 1px solid var(--border); background: var(--panel-2); }
+.chat-input input {
+  width: 100%; padding: 10px 12px; border-radius: 999px; border: 1px solid var(--border);
+  background: #0f1622; color: var(--text);
+}
+.chat-input button { padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border); background: #1a2230; color: var(--text); cursor: pointer; }
+
+/* Utilities */
+.hidden { display: none; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .features { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+}

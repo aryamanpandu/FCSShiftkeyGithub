@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaLabs — Smart Assist</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="description" content="A clean two-page site with a floating chatbot and professional design." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="logo">🗨️</span>
+        <span>NovaLabs</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <h1>Build with Confidence.<br/><span class="accent">Chat with your site.</span></h1>
+        <p>Clean, responsive, and lightning‑fast. This demo includes a floating chatbot
+           with sample prompts, so your visitors can get instant help.</p>
+        <div class="hero-cta">
+          <a href="about.html" class="btn">Learn More</a>
+          <a href="#features" class="btn btn-ghost">See Features</a>
+        </div>
+        <ul class="trust-badges">
+          <li>✓ Responsive</li>
+          <li>✓ Accessible</li>
+          <li>✓ No build tools</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <img src="assets/hero.svg" alt="Hero illustration" />
+      </div>
+    </section>
+
+    <section id="features" class="container features">
+      <article class="card">
+        <img src="assets/feature-1.svg" alt="Feature 1"/>
+        <h3>Floating Chatbot</h3>
+        <p>Always within reach. Opens with one click and supports sample prompts for quick answers.</p>
+      </article>
+      <article class="card">
+        <img src="assets/feature-2.svg" alt="Feature 2"/>
+        <h3>Modern UI</h3>
+        <p>Clean typography, balanced spacing, and subtle shadows make it feel polished and professional.</p>
+      </article>
+      <article class="card">
+        <img src="assets/feature-3.svg" alt="Feature 3"/>
+        <h3>Easy to Host</h3>
+        <p>All static assets. Just drop the folder on any web server (or open index.html locally).</p>
+      </article>
+    </section>
+
+    <section id="contact" class="container contact">
+      <div class="contact-card">
+        <h2>Contact</h2>
+        <p>Questions? Ideas? Reach out and let’s build something amazing.</p>
+        <ul>
+          <li><strong>Email:</strong> hello@novalabs.example</li>
+          <li><strong>Phone:</strong> +1 (555) 010-2025</li>
+          <li><strong>Location:</strong> Halifax, NS</li>
+        </ul>
+      </div>
+      <div class="map-embed">
+        <img src="assets/map.svg" alt="Map placeholder" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand small">
+          <span class="logo">🗨️</span><span>NovaLabs</span>
+        </div>
+        <p class="muted">© <span id="year"></span> NovaLabs. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot UI -->
+  <div id="chatbot-root"></div>
+
+  <script src="js/chatbot.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

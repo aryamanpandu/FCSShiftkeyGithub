@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — NovaLabs</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="description" content="About page for the NovaLabs two-page demo site with chatbot integration." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="logo">🗨️</span><span>NovaLabs</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="index.html#contact" class="btn btn-ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container page-header">
+      <h1>About This Demo</h1>
+      <p>This minimal two‑page site demonstrates a floating chatbot with mock responses and an
+         optional API hook for integrating real LLMs later.</p>
+    </section>
+
+    <section class="container grid-2">
+      <div class="prose">
+        <h2>What’s Included</h2>
+        <ul>
+          <li><strong>Floating Chatbot:</strong> Toggleable panel, sample prompt chips, message history, keyboard submit.</li>
+          <li><strong>Professional UI:</strong> Responsive layout, accessible color contrast, smooth micro‑interactions.</li>
+          <li><strong>No Build Tools:</strong> Pure HTML/CSS/JS. Works locally or on any static host.</li>
+        </ul>
+
+        <h2>How to Wire a Real API</h2>
+        <ol>
+          <li>Open <code>js/chatbot.js</code>.</li>
+          <li>Set <code>USE_MOCK = false</code>.</li>
+          <li>Provide your endpoint and API key in <code>callRealAPI()</code> (currently a stub).</li>
+        </ol>
+
+        <p class="note">Tip: Keep your keys out of the frontend—proxy via a lightweight serverless function or backend.</p>
+      </div>
+      <div class="card center">
+        <img src="assets/feature-2.svg" alt="UI Feature" class="w-80" />
+        <p class="muted">Visual identity stays consistent across pages for a cohesive brand feel.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand small">
+          <span class="logo">🗨️</span><span>NovaLabs</span>
+        </div>
+        <p class="muted">© <span id="year"></span> NovaLabs. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot UI -->
+  <div id="chatbot-root"></div>
+
+  <script src="js/chatbot.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
