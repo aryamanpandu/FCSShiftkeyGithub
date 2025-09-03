@@ -127,33 +127,7 @@
       input.value = '';
     });
 
-    async function handleUserMessage(text) {
-      const userMsg = { role: 'user', content: text };
-      body.appendChild(messageEl('user', text));
-      body.scrollTop = body.scrollHeight;
-      history.push(userMsg);
-      persistHistory(pageKey, history);
-
-      // Bot "typing" indicator
-      const thinking = messageEl('bot', '…');
-      body.appendChild(thinking);
-      body.scrollTop = body.scrollHeight;
-
-      let reply;
-      if (USE_MOCK) {
-        await new Promise(r => setTimeout(r, 600));
-        reply = findAnswer(text) || "I didn’t quite catch that. Try one of the sample prompts below!";
-      } else {
-        reply = await callRealAPI(text);
-      }
-
-      thinking.querySelector('.bubble').innerHTML = reply;
-      history.push({ role: 'bot', content: reply });
-      persistHistory(pageKey, history);
-
-      // keep bottom in view
-      body.scrollTop = body.scrollHeight;
-    }
+    
   }
 
   // bootstrap once DOM is ready
